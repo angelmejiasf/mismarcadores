@@ -1,0 +1,12 @@
+.container {
+    text-align: center;
+    border: solid 2px red;
+    margin: auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.title {
+    border: solid 2px red;
+    width: 100%;
+}
