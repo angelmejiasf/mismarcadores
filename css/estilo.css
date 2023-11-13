@@ -1,12 +1,34 @@
-.container {
-    text-align: center;
-    border: solid 2px red;
-    margin: auto;
-    max-width: 1200px;
-    width: 100%;
+/*
+Container y body valido para todos los archivos .php
+*/
+
+body{
+    background-image: url(../assets/images/wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.title {
-    border: solid 2px red;
+.container {
+    text-align: center;
+    margin: auto;
+    max-width: 1000px;
     width: 100%;
+    border: solid 1px red;
+    
+    
+    
+  
 }
+
+/*
+partidos.php
+*/
+.table{
+    width: 50%;
+    margin: auto;
+    font-size: 20px;
+}
+
+
+
+
