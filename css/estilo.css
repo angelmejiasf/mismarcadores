@@ -1,3 +1,9 @@
+@font-face {
+    font-family: vitality;
+    src: url(../assets/fonts/VarsityTeam-Bold.otf);
+}
+
+
 /*
 Container y body valido para todos los archivos .php
 */
@@ -15,10 +21,10 @@ body{
     width: 100%;
     border: solid 1px red;
     
-    
-    
+ 
   
 }
+
 
 /*
 partidos.php
@@ -27,6 +33,8 @@ partidos.php
     width: 50%;
     margin: auto;
     font-size: 20px;
+    font-family:vitality
+    
 }
 
 
