@@ -18,13 +18,15 @@
             </article>
             
         </section>
+        <p>**Aqui irá el login y register**</p>
         <?php
-        //Iniciar Sesion
+        //Aqui va el login y register
         
         
         ?>
         
-        <a href="partidos.php">partidos</a>
+        <a href="pages/partidos.php">partidos para el usuario</a>
+        <a href="pages/partidosadmin.php">partidos para el admin</a>
     </div>
     </body>
 </html>
