@@ -54,24 +54,8 @@ partidos.php
     font-family: vitality;
     background-color: transparent;
     font-size: 20px;
-    margin-bottom:20px;
-    border-color: transparent;
-}
-
-.competicion{
-    margin-top: 50px;
-    font-size: 30px
 }
 
 
 
-/*
-partidosadmin.php
-*/
-a{
-color:black;
-}
 
-.section{
-    margin-top: 50px;
-}
