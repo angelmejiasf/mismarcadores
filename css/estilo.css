@@ -4,6 +4,12 @@
 }
 
 
+@font-face {
+    font-family: vitality;
+    src: url(../assets/fonts/VarsityTeam-Bold.otf);
+}
+
+
 /*
 Container y body valido para todos los archivos .php
 */
@@ -22,6 +28,14 @@ body{
 .h2{
     margin-top:60px
 }
+.title{
+    font-size: 50px;
+    
+}
+
+.h2{
+    margin-top:60px
+}
 .container {
     text-align: center;
     margin: auto;
@@ -29,16 +43,33 @@ body{
     width: 100%;
     
     font-family: vitality;
+    font-family: vitality;
     
+ 
  
   
 }
+
 
 
 /*
 partidos.php
 */
 .table{
+    width: 60%;
+    margin:auto;
+    font-size: 20px;
+    font-family:vitality;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    border-color:black;
+    
+    
+}
+
+.input{
+    font-family: vitality;
+    background-color: transparent;
     width: 60%;
     margin:auto;
     font-size: 20px;
