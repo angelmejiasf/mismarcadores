@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-12-2023 a las 17:31:25
+-- Tiempo de generación: 08-02-2024 a las 12:03:11
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -24,71 +24,160 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `bundesliga`
+-- Estructura de tabla para la tabla `equipos`
 --
 
-CREATE TABLE `bundesliga` (
-  `equipolocal` varchar(30) NOT NULL,
-  `equipovisitante` varchar(30) NOT NULL,
-  `resultadolocal` int(2) NOT NULL,
-  `resultadovisitante` int(2) NOT NULL
+CREATE TABLE `equipos` (
+  `id_equipo` int(11) NOT NULL,
+  `nombre_equipo` varchar(255) NOT NULL,
+  `id_liga` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `bundesliga`
+-- Volcado de datos para la tabla `equipos`
 --
 
-INSERT INTO `bundesliga` (`equipolocal`, `equipovisitante`, `resultadolocal`, `resultadovisitante`) VALUES
-('Bayern de Munich', '1. FC Heidenheim 1846', 2, 0),
-('RB Leipzig', 'Eintracht Frankfurt', 2, 1),
-('Borussia Dortmund', 'VfB Stuttgart', 2, 2),
-('Werder Bremen', 'Bayern Leverkusen', 0, 2);
+INSERT INTO `equipos` (`id_equipo`, `nombre_equipo`, `id_liga`) VALUES
+(1, 'Real Madrid', 1),
+(2, 'FC BARCELONA', 1),
+(3, 'Valencia', 1),
+(4, 'Athletic Club', 1),
+(5, 'Chelsea', 3),
+(6, 'Manchester United', 3),
+(7, 'Manchester City', 3),
+(8, 'Liverpool', 3),
+(9, 'Bayern Munich', 2),
+(10, 'Bayern Leverkunsen', 2),
+(11, 'Shalke 04', 2),
+(12, 'Wender Bremen', 2);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `laligaeasports`
+-- Estructura de tabla para la tabla `ligas`
 --
 
-CREATE TABLE `laligaeasports` (
-  `equipolocal` varchar(30) NOT NULL,
-  `equipovisitante` varchar(30) NOT NULL,
-  `resultadolocal` int(2) NOT NULL,
-  `resultadovisitante` int(2) NOT NULL
+CREATE TABLE `ligas` (
+  `id_liga` int(11) NOT NULL,
+  `nombre_liga` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `laligaeasports`
+-- Volcado de datos para la tabla `ligas`
 --
 
-INSERT INTO `laligaeasports` (`equipolocal`, `equipovisitante`, `resultadolocal`, `resultadovisitante`) VALUES
-('RCD Mallorca', 'Cadiz CF', 0, 1),
-('FC Barcelona', 'UD ALMERIA', 3, 1),
-('ATLETICO DE MADRID', 'Deportivo Alaves', 0, 1),
-('REAL MADRID CF', 'VALENCIA CF', 2, 0);
+INSERT INTO `ligas` (`id_liga`, `nombre_liga`) VALUES
+(1, 'La Liga EASports'),
+(2, 'Bundesliga'),
+(3, 'Premier League');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `premierleague`
+-- Estructura de tabla para la tabla `partidos`
 --
 
-CREATE TABLE `premierleague` (
-  `equipolocal` varchar(30) NOT NULL,
-  `equipovisitante` varchar(30) NOT NULL,
-  `resultadolocal` int(2) NOT NULL,
-  `resultadovisitante` int(2) NOT NULL
+CREATE TABLE `partidos` (
+  `id_partido` int(11) NOT NULL,
+  `id_equipo_local` int(11) DEFAULT NULL,
+  `id_equipo_visitante` int(11) DEFAULT NULL,
+  `resultado_local` int(11) DEFAULT NULL,
+  `resultado_visitante` int(11) DEFAULT NULL,
+  `fecha_partido` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `premierleague`
+-- Volcado de datos para la tabla `partidos`
 --
 
-INSERT INTO `premierleague` (`equipolocal`, `equipovisitante`, `resultadolocal`, `resultadovisitante`) VALUES
-('Chelsea FC', 'Everton FC', 1, 1),
-('Liverpool FC', 'Luton Town FC', 4, 0),
-('Manchester United FC', 'Burnley FC', 0, 0),
-('Manchester City FC', 'Arsenal FC', 2, 3);
+INSERT INTO `partidos` (`id_partido`, `id_equipo_local`, `id_equipo_visitante`, `resultado_local`, `resultado_visitante`, `fecha_partido`) VALUES
+(7, NULL, NULL, 3, 1, '2024-01-11'),
+(8, NULL, NULL, 2, 2, '2023-11-23'),
+(11, 3, 4, 2, 3, '2024-02-14'),
+(12, 2, 3, 2, 3, '2024-02-17'),
+(13, 4, 3, 2, 2, '2024-02-20'),
+(14, 10, 11, 1, 0, '2022-10-19'),
+(15, 9, 12, 2, 1, '2024-01-17'),
+(16, 5, 8, 2, 3, '2024-01-26'),
+(17, 8, 7, 2, 3, '2024-02-06'),
+(18, 9, 10, 2, 1, '2024-02-15');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(11) NOT NULL,
+  `nombre_usuario` varchar(255) NOT NULL,
+  `correo_electronico` varchar(255) NOT NULL,
+  `contraseña` varchar(255) NOT NULL,
+  `fecha_registro` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `correo_electronico`, `contraseña`, `fecha_registro`) VALUES
+(4, 'admin', 'ADMIN@GMAIL.COM', 'admin', '2024-02-08'),
+(5, 'user', 'USER@GMAIL.COM', 'user', '2024-02-08');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `equipos`
+--
+ALTER TABLE `equipos`
+  ADD PRIMARY KEY (`id_equipo`),
+  ADD KEY `id_liga` (`id_liga`);
+
+--
+-- Indices de la tabla `ligas`
+--
+ALTER TABLE `ligas`
+  ADD PRIMARY KEY (`id_liga`);
+
+--
+-- Indices de la tabla `partidos`
+--
+ALTER TABLE `partidos`
+  ADD PRIMARY KEY (`id_partido`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `partidos`
+--
+ALTER TABLE `partidos`
+  MODIFY `id_partido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `equipos`
+--
+ALTER TABLE `equipos`
+  ADD CONSTRAINT `equipos_ibfk_1` FOREIGN KEY (`id_liga`) REFERENCES `ligas` (`id_liga`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

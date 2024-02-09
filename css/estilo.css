@@ -1,108 +1,100 @@
-@font-face {
-    font-family: vitality;
-    src: url(../assets/fonts/VarsityTeam-Bold.otf);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-@font-face {
-    font-family: vitality;
-    src: url(../assets/fonts/VarsityTeam-Bold.otf);
-}
-
-
-/*
-Container y body valido para todos los archivos .php
-*/
-
-body{
+body {
+    font-family: Arial, sans-serif;
     background-image: url(../assets/images/wallpaper.jpg);
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: black;
+    line-height: 1.6;
 }
 
-.title{
-    font-size: 50px;
-    
-}
-
-.h2{
-    margin-top:60px
-}
-.title{
-    font-size: 50px;
-    
-}
-
-.h2{
-    margin-top:60px
-}
 .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
     text-align: center;
-    margin: auto;
-    max-width: 1000px;
+
+}
+
+.title {
+    font-size: 3em;
+    margin-bottom: 20px;
+
+}
+
+.table {
     width: 100%;
-    
-    font-family: vitality;
-    font-family: vitality;
-    
- 
- 
-  
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.competicion {
+    font-size: 2em;
+    margin-top: 30px;
+    background-color: white;
+}
+
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+    background-color: white;
+   
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+
+.btn-logout {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
 }
 
 
 
-/*
-partidos.php
-*/
-.table{
-    width: 60%;
-    margin:auto;
-    font-size: 20px;
-    font-family:vitality;
-    margin-bottom: 40px;
-    margin-top: 40px;
-    border-color:black;
-    
-    
-}
-
-.input{
-    font-family: vitality;
-    background-color: transparent;
-    width: 60%;
-    margin:auto;
-    font-size: 20px;
-    font-family:vitality;
-    margin-bottom: 40px;
-    margin-top: 40px;
-    border-color:black;
-    
-    
-}
-
-.input{
-    font-family: vitality;
-    background-color: transparent;
-    font-size: 20px;
-    margin-bottom:20px;
-    border-color: transparent;
-}
-
-.competicion{
+.boton-volver {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
     margin-top: 50px;
-    font-size: 30px
 }
 
 
+.boton-volver:hover {
+    background-color: #0056b3;
 
-/*
-partidosadmin.php
-*/
-a{
-color:black;
 }
 
-.section{
-    margin-top: 50px;
+.section {
+    background-color: white;
 }
