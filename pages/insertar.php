@@ -130,15 +130,15 @@ session_start();
 
             // Verificar si ya existe un partido con los mismos equipos local y visitante
             if (existePartido($pdo, $idEquipoLocal, $idEquipoVisitante)) {
-                echo "Ya existe un partido con los mismos equipos local y visitante.";
+                echo "<p>Ya existe un partido con los mismos equipos local y visitante.</p>";
             } else {
                 // Verificar si los equipos seleccionados son diferentes
                 if ($idEquipoLocal === $idEquipoVisitante) {
-                    echo "Los equipos local y visitante no pueden ser iguales.";
+                    echo "<p>Los equipos local y visitante no pueden ser iguales.</p>";
                 } else {
                     // Verificar si los equipos seleccionados pertenecen a la misma liga
                     if (!equiposEnMismaLiga($pdo, $idEquipoLocal, $idEquipoVisitante, $idLigaSeleccionada)) {
-                        echo "Los equipos seleccionados no pertenecen a la misma liga.";
+                        echo "<p>Los equipos seleccionados no pertenecen a la misma liga.</p>";
                     } else {
                         // Insertar el partido en la base de datos
                         $resultadoLocal = $_POST['resultadolocal'];
@@ -157,7 +157,7 @@ session_start();
 
                         // Ejecutar la consulta
                         if ($stmt->execute()) {
-                            echo "El partido se ha insertado correctamente.";
+                            echo "<p>El partido se ha insertado correctamente.</p>";
                             echo "<br>";
                         } else {
                             echo "Error al insertar el partido.";

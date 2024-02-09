@@ -57,6 +57,9 @@ a {
    
 }
 
+p{
+    color:white;
+}
 a:hover {
     color: #0056b3;
 }
@@ -98,3 +101,4 @@ a:hover {
 .section {
     background-color: white;
 }
+

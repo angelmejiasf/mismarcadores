@@ -5,7 +5,6 @@ session_destroy();
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,7 +20,7 @@ session_destroy();
 
 <body>
     <div class="container">
-        <h1 class="title">Mis Marcadores </h1><img src="./assets/images/mis-marcadores-1.ico" width="100px" /><br>
+        <h1 class="title">Mis Marcadores </h1><img src="./assets/images/mis-marcadores-1.ico" alt="logo"/><br>
         <section class="section">
             <article class="article">
 

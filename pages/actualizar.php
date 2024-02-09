@@ -49,7 +49,7 @@ session_start();
 
                 // Verificar si los equipos pertenecen a la misma liga
                 if ($liga_local != $liga_visitante) {
-                    echo "Los equipos seleccionados no pertenecen a la misma liga. No se pueden modificar.";
+                    echo "<p>Los equipos seleccionados no pertenecen a la misma liga. No se pueden modificar.</p>";
                 } else {
                     // Continuar con el proceso de actualización
                     $id_partido = $_POST['id_partido'];
@@ -73,9 +73,9 @@ session_start();
 
                     // Ejecutar la consulta de actualización
                     if ($stmt_update->execute()) {
-                        echo "Los cambios se han guardado correctamente.";
+                        echo "<p>Los cambios se han guardado correctamente.</p>";
                     } else {
-                        echo "Error al guardar los cambios.";
+                        echo "<p>Error al guardar los cambios.</p>";
                     }
                 }
             }

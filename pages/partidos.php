@@ -75,7 +75,7 @@ session_start();
             $consulta->execute();
             $resultados = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
-            echo "<p class='competicion'>" . $nombreCompeticion . "</p>";
+            echo "<h2 class='competicion'>" . $nombreCompeticion . "</h2>";
             echo "<table class='table'>";
             foreach ($resultados as $fila) {
                 echo "<tr>";
