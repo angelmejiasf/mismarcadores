@@ -1,10 +1,9 @@
 <?php
 session_start();
-session_destroy();
-
-
-
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -20,7 +19,7 @@ session_destroy();
 
 <body>
     <div class="container">
-        <h1 class="title">Mis Marcadores </h1><img src="./assets/images/mis-marcadores-1.ico" alt="logo"/><br>
+        <h1 class="title">Mis Marcadores </h1><img src="./assets/images/mis-marcadores-1.ico" alt="logo" /><br>
         <section class="section">
             <article class="article">
 
@@ -80,14 +79,19 @@ session_destroy();
                     $hashed_password = hash('sha256', $contrasena);
                     if ($hashed_password === $row['contraseña']) {
                         // Autenticación exitosa
+                        
+                        setcookie('usuario', $usuario, time() + (86400 * 30), '/');
                         $_SESSION['usuario'] = $usuario;
-                        // Redirigir según el tipo de usuario
+                        
+                        
+                        // Redirigir al usuario a la página apropiada
                         if ($row['nombre_usuario'] == 'admin') {
                             header("Location: ./pages/partidosadmin.php");
+                            exit();
                         } else {
                             header("Location: ./pages/partidos.php");
+                            exit();
                         }
-                        exit();
                     } else {
                         $mensaje = "Credenciales incorrectas. Intenta de nuevo.";
                         echo '<p class="error">' . $mensaje . '</p>';

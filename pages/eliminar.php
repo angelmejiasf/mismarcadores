@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: ../index.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -78,6 +84,9 @@ session_start();
         ?>
         <a href="./partidosadmin.php">
             <button class="boton-volver">Volver atras</button>
+        </a>
+        <a href="./sesion_logout.php">
+            <button class="boton-volver">Cerrar Sesion</button>
         </a>
     </div>
 

@@ -1,8 +1,12 @@
 <?php
+
 session_start();
 
 
-
+if (!isset($_SESSION['usuario'])) {
+    header("Location: ../index.php");
+    exit();
+}
 
 ?>
 
@@ -51,18 +55,7 @@ session_start();
             echo "Error con la bd: " . $e->getMessage();
         }
 
-        /**
-         * Establece cookies en el navegador del usuario.
-         *
-         * @param array $usuario Un array con información sobre el usuario.
-         * @return void
-         */
-        function setCookies($usuario)
-        {
-            // Establecer cookies para el nombre de usuario y la sesión
-            setcookie('nombre_usuario', $usuario['nombre_usuario'], time() + (86400 * 30), '/');
-            setcookie('sesion', session_id(), time() + (86400 * 30), '/');
-        }
+
         /**
          * Muestra los partidos de una competición dada en una tabla HTML.
          *
@@ -105,7 +98,7 @@ session_start();
             return $equipo['nombre_equipo'];
         }
         ?>
-        <a href="../index.php">
+        <a href="./sesion_logout.php">
             <button class="boton-volver">Cerrar Sesion</button>
         </a>
     </div>
